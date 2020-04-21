@@ -3,15 +3,12 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        build(job: 'build', quietPeriod: 1, wait: true, propagate: true)
+        sh 'npm install'
       }
     }
 
-    stage('review') {
-      steps {
-        sleep 2
-      }
-    }
-
+  }
+  environment {
+    PM_EMAIL = '"546565244@qq.com"'
   }
 }
