@@ -1,14 +1,19 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'master'
+    }
+
+  }
   stages {
-    stage('build') {
+    stage('pull') {
       steps {
-        sh 'npm install'
+        sh 'echo "my first job"'
       }
     }
 
   }
   environment {
-    PM_EMAIL = '"546565244@qq.com"'
+    PM_EMAIL = '546565244@qq.com'
   }
 }
